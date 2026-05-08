@@ -36,11 +36,3 @@ class PyTroveClassifiers(PythonPackage):
 
     depends_on("py-setuptools", type="build")
     depends_on("py-calver", type="build")
-
-    def url_for_version(self, version):
-        if version >= Version("2024.5.17"):
-            sep = "_"
-        else:
-            sep = "-"
-
-        return f"https://files.pythonhosted.org/packages/source/t/trove{sep}classifiers/trove{sep}classifiers-{version}.tar.gz"

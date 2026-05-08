@@ -30,13 +30,3 @@ class PySphinxcontribHtmlhelp(PythonPackage):
     depends_on("py-flit-core@3.7:", when="@2.0.2:", type="build")
     depends_on("py-setuptools@64:", when="@2.0.1", type="build")
     depends_on("py-setuptools", when="@:2.0.0", type="build")
-
-    def url_for_version(self, version):
-        url = (
-            "https://files.pythonhosted.org/packages/source/s/sphinxcontrib-htmlhelp/{}-{}.tar.gz"
-        )
-        if version >= Version("2.0.2"):
-            name = "sphinxcontrib_htmlhelp"
-        else:
-            name = "sphinxcontrib-htmlhelp"
-        return url.format(name, version)

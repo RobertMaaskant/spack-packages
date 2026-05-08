@@ -62,10 +62,3 @@ class PySqlalchemy(PythonPackage):
         depends_on("py-psycopg2", when="backend=postgresql @:1.3")
 
     conflicts("^py-greenlet@0.4.17", when="@1.4.0:2.0.30 ^python@:3.13")
-
-    def url_for_version(self, version):
-        if self.spec.satisfies("@2.0.33:"):
-            name = "sqlalchemy"
-        else:
-            name = "SQLAlchemy"
-        return f"https://files.pythonhosted.org/packages/source/{name[0]}/{name}/{name}-{version}.tar.gz"

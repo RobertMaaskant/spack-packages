@@ -27,10 +27,3 @@ class PySphinxPrompt(PythonPackage):
     depends_on("py-pygments@2.16.1", when="@1.8.0", type=("build", "run"))
     depends_on("py-pygments", when="@1.1.0", type=("build", "run"))
     depends_on("py-docutils@0.20.1", when="@1.8.0", type=("build", "run"))
-
-    def url_for_version(self, version):
-        if version >= Version("1.6"):
-            url = "https://files.pythonhosted.org/packages/source/s/sphinx_prompt/sphinx_prompt-{0}.tar.gz"
-        else:
-            url = "https://files.pythonhosted.org/packages/source/s/sphinx_prompt/sphinx-prompt-{0}.tar.gz"
-        return url.format(version)

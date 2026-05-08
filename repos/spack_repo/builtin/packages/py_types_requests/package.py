@@ -30,10 +30,3 @@ class PyTypesRequests(PythonPackage):
     # Historical dependencies
     depends_on("py-types-urllib3", type=("build", "run"), when="@:2.31.0.6")
     depends_on("py-types-urllib3@:1.26", type=("build", "run"), when="@:2.29")
-
-    def url_for_version(self, version):
-        if self.spec.satisfies("@2.32.0.20250301:"):
-            name = "types_requests"
-        else:
-            name = "types-requests"
-        return f"https://files.pythonhosted.org/packages/source/{name[0]}/{name}/{name}-{version}.tar.gz"

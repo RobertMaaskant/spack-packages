@@ -27,10 +27,3 @@ class PyTypesPytz(PythonPackage):
 
     depends_on("py-setuptools@77.0.3:", type="build", when="@025.2.0.20250516:")
     depends_on("py-setuptools", type="build")
-
-    def url_for_version(self, version):
-        if self.spec.satisfies("@2024.2.0.20241221:"):
-            name = "types_pytz"
-        else:
-            name = "types-pytz"
-        return f"https://files.pythonhosted.org/packages/source/{name[0]}/{name}/{name}-{version}.tar.gz"

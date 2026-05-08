@@ -136,13 +136,3 @@ class PyScikitImage(PythonPackage):
         depends_on("py-pooch@0.5.2:", when="@0.17.0:0.17.1")
 
     conflicts("py-imageio@2.35.0")
-
-    def url_for_version(self, version):
-        url = (
-            "https://files.pythonhosted.org/packages/source/s/scikit-image/scikit{}image-{}.tar.gz"
-        )
-        if version >= Version("0.20"):
-            sep = "_"
-        else:
-            sep = "-"
-        return url.format(sep, version)

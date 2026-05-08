@@ -81,11 +81,3 @@ class PySetuptoolsScm(PythonPackage):
         depends_on("py-typing-extensions", when="@7:8.0.4")
 
         depends_on("py-importlib-metadata", when="@7: ^python@:3.7")
-
-    def url_for_version(self, version):
-        # setuptools_scm-7.1.0.tar.gz with an underscore became
-        # setuptools-scm-8.0.4.tar.gz with a dash
-        url = super().url_for_version(version)
-        if version >= Version(8):
-            return url.replace("_", "-")
-        return url

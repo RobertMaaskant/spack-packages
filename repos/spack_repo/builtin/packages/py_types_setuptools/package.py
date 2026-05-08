@@ -38,11 +38,3 @@ class PyTypesSetuptools(PythonPackage):
     with default_args(type=("build", "run")):
         depends_on("python@3.10:", when="@82.0.0.20260210:")
         depends_on("python@3.9:", when="@75.8.0.20250210:")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/t/types-setuptools/{}-{}.tar.gz"
-        if version >= Version("75.5.0.20241121"):
-            name = "types_setuptools"
-        else:
-            name = "types-setuptools"
-        return url.format(name, version)

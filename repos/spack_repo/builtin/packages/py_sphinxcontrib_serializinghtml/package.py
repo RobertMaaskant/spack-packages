@@ -34,11 +34,3 @@ class PySphinxcontribSerializinghtml(PythonPackage):
 
     # Historical dependencies
     depends_on("py-setuptools", when="@:1.1.5", type="build")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/s/sphinxcontrib-serializinghtml/sphinxcontrib{}serializinghtml-{}.tar.gz"
-        if version >= Version("1.1.6"):
-            separator = "_"
-        else:
-            separator = "-"
-        return url.format(separator, version)

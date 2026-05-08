@@ -203,11 +203,3 @@ class PySphinx(PythonPackage):
         depends_on("py-six@1.5:", when="@:1")
         depends_on("py-sphinx-rtd-theme@0.1:", when="@:1.3")
         depends_on("py-tomli@2:", when="@7.3.1: ^python@:3.10")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/S/Sphinx/{}-{}.tar.gz"
-        if version >= Version("7.1"):
-            name = "sphinx"
-        else:
-            name = "Sphinx"
-        return url.format(name, version)

@@ -73,14 +73,6 @@ class PyShapely(PythonPackage):
         when="@:1.7.0",
     )
 
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/{0}/{0}hapely/{0}hapely-{1}.tar.gz"
-        if version >= Version("2"):
-            letter = "s"
-        else:
-            letter = "S"
-        return url.format(letter, version)
-
     @when("@:1.8.1")
     def patch(self):
         # Python 3.7 changed the thread storage API, precompiled *.c files

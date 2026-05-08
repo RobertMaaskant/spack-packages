@@ -32,10 +32,3 @@ class PyTypesPsutil(PythonPackage):
     with default_args(type=("build", "run")):
         depends_on("python@3.10:", when="@7.2.2.20260404:")
         depends_on("python@3.9:", when="@7.0.0.20250218:")
-
-    def url_for_version(self, version):
-        if self.spec.satisfies("@6.1.0.20241221:"):
-            name = "types_psutil"
-        else:
-            name = "types-psutil"
-        return f"https://files.pythonhosted.org/packages/source/{name[0]}/{name}/{name}-{version}.tar.gz"

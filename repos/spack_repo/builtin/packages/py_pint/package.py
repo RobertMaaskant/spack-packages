@@ -64,10 +64,3 @@ class PyPint(PythonPackage):
     depends_on("py-numpy@1.23:", when="@0.24: +numpy")  # numpy 2 added in 0.24
     depends_on("py-xarray", when="+xarray")
     depends_on("py-dask", when="+dask")
-
-    def url_for_version(self, version):
-        if version > Version("0.22"):
-            return super().url_for_version(version)
-
-        url = "https://files.pythonhosted.org/packages/source/p/pint/Pint-{0}.tar.gz"
-        return url.format(version.dotted)

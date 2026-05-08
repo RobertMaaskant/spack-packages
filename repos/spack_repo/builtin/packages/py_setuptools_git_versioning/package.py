@@ -25,7 +25,3 @@ class PySetuptoolsGitVersioning(PythonPackage):
     depends_on("py-packaging", type=("build", "run"))
 
     depends_on("git", type="run")
-
-    def url_for_version(self, version):
-        sep = "_" if version >= Version("3.0.0") else "-"
-        return f"https://files.pythonhosted.org/packages/source/s/setuptools{sep}git{sep}versioning/setuptools_git_versioning-{version}.tar.gz"

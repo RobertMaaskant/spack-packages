@@ -39,17 +39,6 @@ class PyTwisted(PythonPackage):
     depends_on("py-typing-extensions@3.6.5:", type=("build", "run"), when="@21.7.0:")
     depends_on("py-typing-extensions@3.10.0:", type=("build", "run"), when="@23.8.0:")
 
-    def url_for_version(self, version):
-        url = "https://pypi.io/packages/source/T/Twisted/"
-
-        if version <= Version("22.10.0"):
-            url += "Twisted-{0}.tar.gz"
-        else:
-            url += "twisted-{0}.tar.gz"
-
-        url = url.format(version)
-        return url
-
     @property
     def import_modules(self):
         modules = [

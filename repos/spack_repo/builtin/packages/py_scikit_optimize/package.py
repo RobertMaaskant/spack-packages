@@ -45,11 +45,3 @@ class PyScikitOptimize(PythonPackage):
 
     depends_on("py-matplotlib", when="+plots")
     depends_on("py-matplotlib@2:", when="@0.9:+plots")
-
-    def url_for_version(self, version):
-        url = "https://pypi.org/packages/source/s/scikit-optimize/scikit{}optimize-{}.tar.gz"
-        if version < Version("0.10.2"):
-            separator = "-"
-        else:
-            separator = "_"
-        return url.format(separator, version)

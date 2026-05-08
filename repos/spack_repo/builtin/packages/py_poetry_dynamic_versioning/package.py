@@ -31,11 +31,3 @@ class PyPoetryDynamicVersioning(PythonPackage):
         depends_on("py-dunamai@1.12", when="@:0.19")
         depends_on("py-tomlkit@0.4:")
         depends_on("py-jinja2@2.11.1:3")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/p/{0}/{0}-{1}.tar.gz"
-        if version >= Version("1"):
-            letter = "poetry_dynamic_versioning"
-        else:
-            letter = "poetry-dynamic-versioning"
-        return url.format(letter, version)

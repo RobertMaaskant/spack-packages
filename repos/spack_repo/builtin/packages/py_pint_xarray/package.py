@@ -35,10 +35,3 @@ class PyPintXarray(PythonPackage):
         depends_on("py-xarray@0.16.1:", type=("build", "run"))
         depends_on("py-pint@0.16: +xarray +numpy +dask", type=("build", "run"))
         depends_on("py-importlib-metadata", when="@0.2.1 ^python@:3.7", type=("build", "run"))
-
-    def url_for_version(self, version):
-        if version >= Version("0.4"):
-            return super().url_for_version(version)
-
-        url = "https://files.pythonhosted.org/packages/source/p/pint-xarray/pint-xarray-{0}.tar.gz"
-        return url.format(version)

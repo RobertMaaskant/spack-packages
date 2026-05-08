@@ -28,11 +28,3 @@ class PySphinxcontribDevhelp(PythonPackage):
 
     depends_on("py-flit-core@3.7:", when="@1.0.3:", type="build")
     depends_on("py-setuptools", when="@:1.0.2", type="build")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/s/sphinxcontrib-devhelp/{}-{}.tar.gz"
-        if version >= Version("1.0.3"):
-            name = "sphinxcontrib_devhelp"
-        else:
-            name = "sphinxcontrib-devhelp"
-        return url.format(name, version)

@@ -40,10 +40,3 @@ class PySetuptoolsRust(PythonPackage):
     depends_on("py-setuptools-scm+toml@3.4.3:", when="@:1.1", type="build")
     depends_on("py-tomli@1.2.1:", when="@:1.9 ^python@:3.10", type=("build", "run"))
     depends_on("py-toml@0.9.0:", type=("build", "run"), when="@0.12.1")
-
-    def url_for_version(self, version):
-        if version >= Version("1.10.0"):
-            name = "setuptools_rust"
-        else:
-            name = "setuptools-rust"
-        return f"https://files.pythonhosted.org/packages/source/s/setuptools-rust/{name}-{version}.tar.gz"

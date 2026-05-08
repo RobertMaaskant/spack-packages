@@ -262,11 +262,3 @@ class PyPillow(PyPillowBase):
         "8.0.0",
     ]:
         provides("pil@" + ver, when="@" + ver)
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/{0}/{0}illow/{0}illow-{1}.tar.gz"
-        if version >= Version("10.2"):
-            letter = "p"
-        else:
-            letter = "P"
-        return url.format(letter, version)

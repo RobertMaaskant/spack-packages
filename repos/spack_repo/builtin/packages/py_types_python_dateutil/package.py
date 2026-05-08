@@ -22,10 +22,3 @@ class PyTypesPythonDateutil(PythonPackage):
     depends_on("python@3.9:", type=("build", "run"), when="@2.9.0.20250516:")
     depends_on("py-setuptools@77.0.3:", type="build", when="@2.9.0.20250516:")
     depends_on("py-setuptools", type="build")
-
-    def url_for_version(self, version):
-        if self.spec.satisfies("@2.9.0.20241206:"):
-            name = "types_python_dateutil"
-        else:
-            name = "types-python-dateutil"
-        return f"https://files.pythonhosted.org/packages/source/{name[0]}/{name}/{name}-{version}.tar.gz"

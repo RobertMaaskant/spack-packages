@@ -22,7 +22,3 @@ class PyWerkzeug(PythonPackage):
 
     depends_on("py-flit-core@:3", type="build")
     depends_on("py-markupsafe@2.1.1:", type=("build", "run"))
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/w/werkzeug/werkzeug-{}.tar.gz"
-        return url.format(version)

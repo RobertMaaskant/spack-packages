@@ -43,11 +43,3 @@ class PySphinxcontribBibtex(PythonPackage):
     depends_on("py-importlib-metadata@3.6:", when="@2.5.0: ^python@:3.9", type=("build", "run"))
 
     conflicts("^py-docutils@0.18:0.19", when="@2.6.5")
-
-    def url_for_version(self, version):
-        url = "https://pypi.org/packages/source/s/sphinxcontrib-bibtex/sphinxcontrib{}bibtex-{}.tar.gz"
-        if version < Version("2.6.3"):
-            separator = "-"
-        else:
-            separator = "_"
-        return url.format(separator, version)

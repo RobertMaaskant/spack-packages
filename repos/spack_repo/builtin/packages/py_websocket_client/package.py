@@ -32,11 +32,3 @@ class PyWebsocketClient(PythonPackage):
 
     # Historical dependencies
     depends_on("py-six", type=("build", "run"), when="@:1.2.0")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/w/{0}/{0}-{1}.tar.gz"
-        if self.spec.satisfies("@0.59.0:1.7"):
-            letter = "websocket-client"
-        else:
-            letter = "websocket_client"
-        return url.format(letter, version)

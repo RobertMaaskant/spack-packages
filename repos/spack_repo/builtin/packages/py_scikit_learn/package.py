@@ -110,14 +110,6 @@ class PyScikitLearn(PythonPackage):
         depends_on("py-setuptools", when="@:1.4")
         depends_on("py-setuptools@:59", when="@:1.2.1")
 
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/s/scikit-learn/{}-{}.tar.gz"
-        if version >= Version("1.5"):
-            name = "scikit_learn"
-        else:
-            name = "scikit-learn"
-        return url.format(name, version)
-
     def setup_build_environment(self, env: EnvironmentModifications) -> None:
         if self.spec.satisfies("@:1.4"):
             # Enable parallel builds for the pre py-meson-python build system

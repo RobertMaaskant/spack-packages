@@ -23,9 +23,3 @@ class PyXlsxwriter(PythonPackage):
     version("1.0.2", sha256="a26bbbafff88abffce592ffd5dfaa4c9f08dc44ef4afbf45c70d3e270325f856")
 
     depends_on("py-setuptools", type="build")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/X/XlsxWriter/XlsxWriter-{}.tar.gz"
-        if version >= Version("3.2.2"):
-            url = url.lower()
-        return url.format(version)

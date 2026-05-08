@@ -38,14 +38,6 @@ class PyPoetryCore(PythonPackage):
         depends_on("py-importlib-metadata@1.7:", when="@1.1:1.6 ^python@:3.7")
         depends_on("py-importlib-metadata@1.7:1", when="@:1.0 ^python@:3.7")
 
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/p/poetry-core/{0}-{1}.tar.gz"
-        if version >= Version("1.4"):
-            letter = "poetry_core"
-        else:
-            letter = "poetry-core"
-        return url.format(letter, version)
-
     # https://github.com/python-poetry/poetry/issues/5547
     def setup_build_environment(self, env: EnvironmentModifications) -> None:
         env.set("GIT_DIR", join_path(self.stage.source_path, ".git"))

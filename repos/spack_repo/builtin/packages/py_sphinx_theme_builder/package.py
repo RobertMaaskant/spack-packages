@@ -37,11 +37,3 @@ class PySphinxThemeBuilder(PythonPackage):
         depends_on("py-setuptools")
         depends_on("py-tomli", when="^python@:3.10")
         depends_on("py-diagnostic@2:", when="@0.3:")
-
-    def url_for_version(self, version):
-        url = "https://files.pythonhosted.org/packages/source/s/sphinx-theme-builder/{}-{}.tar.gz"
-        if version == Version("0.2.0b2"):
-            name = "sphinx-theme-builder"
-        else:
-            name = "sphinx_theme_builder"
-        return url.format(name, version)
